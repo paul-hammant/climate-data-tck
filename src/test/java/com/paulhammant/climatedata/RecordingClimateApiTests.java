@@ -18,7 +18,8 @@ public class RecordingClimateApiTests extends ClimateApiTests {
 
 
         SimpleInteractionManipulations manipulations = new SimpleInteractionManipulations(
-                "http://localhost:61417", "http://climatedataapi.worldbank.org")
+                //"http://localhost:61417", "http://climatedataapi.worldbank.org")
+                "http://localhost:61417", "https://servirtium.github.io/worldbank-climate-recordings")
                 .withHeaderPrefixesToRemoveFromServiceResponse("Date:", "X-", "Strict-Transport-Security",
                         "Content-Security-Policy", "Cache-Control", "Secure", "HttpOnly",
                         "Set-Cookie: climatedata.cookie=");

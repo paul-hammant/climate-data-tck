@@ -17,7 +17,8 @@ public class PlaybackClimateApiTests extends ClimateApiTests {
         System.out.println("************************");
 
         SimpleInteractionManipulations manipulations = new SimpleInteractionManipulations(
-                "http://localhost:61417", "http://climatedataapi.worldbank.org")
+                //"http://localhost:61417", "http://climatedataapi.worldbank.org")
+        "http://localhost:61417", "https://servirtium.github.io/worldbank-climate-recordings")
                 .withHeaderPrefixesToRemoveFromServiceResponse("Date:");
         final MarkdownReplayer.ReplayMonitor.Console monitor = new MarkdownReplayer.ReplayMonitor.Console();
         // final MarkdownReplayer.ReplayMonitor.Console monitor = new MarkdownReplayer.ReplayMonitor.Default();

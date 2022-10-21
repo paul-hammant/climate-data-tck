@@ -15,7 +15,8 @@ import java.util.stream.Stream;
 
 public class ClimateApi {
 
-    public static String DEFAULT_CLIMATE_API_SITE = "http://climatedataapi.worldbank.org";
+    //public static String DEFAULT_CLIMATE_API_SITE = "http://climatedataapi.worldbank.org";
+    public static String DEFAULT_CLIMATE_API_SITE = "https://servirtium.github.io/worldbank-climate-recordings";
 
     private final String site;
     private final XStream xStream;
@@ -25,7 +26,7 @@ public class ClimateApi {
         xStream = new XStream();
         xStream.alias("domain.web.AnnualGcmDatum", AnnualGcmDatum.class);
         xStream.aliasField("double", AnnualData.class, "doubleVal");
-
+        xStream.allowTypesByWildcard(new String[] {"com.paulhammant.climatedata.domain.web.*"});
     }
 
     public double getAveAnnualRainfall(final int fromCCYY, final int toCCYY, final String... countryISOs) {
